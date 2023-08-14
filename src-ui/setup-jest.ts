@@ -75,6 +75,12 @@ Object.defineProperty(window, 'sessionStorage', { value: mock() })
 Object.defineProperty(window, 'getComputedStyle', {
   value: () => ['-webkit-appearance'],
 })
+Object.defineProperty(navigator, 'clipboard', {
+  value: {
+    writeText: async () => {},
+  },
+})
+Object.defineProperty(navigator, 'canShare', { value: () => true })
 
 Object.defineProperty(window, 'ResizeObserver', { value: mock() })
 
